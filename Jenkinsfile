@@ -13,6 +13,7 @@ node {
         sh "printenv"
         echo ${env.BUILD_NUMBER}
         final scmVars = checkout(scm)
-        echo "GIT_COMMIT: ${scmVars.GIT_COMMIT}"
+        GIT_COMMIT_MSG=sh (script: 'git log -1 --pretty=%B ${GIT_COMMIT_MSG}', returnStdout: true).trim()
+        echo "GIT_COMMIT_MSG: ${scmVars.GIT_COMMIT_MSG}"
     }
 }
