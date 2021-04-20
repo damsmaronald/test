@@ -13,6 +13,6 @@ node {
         sh "printenv"
         echo ${env.BUILD_NUMBER}
         final scmVars = checkout(scm)
-        echo "GIT_COMMIT: ${scmVars.GIT_COMMIT}
+        echo "GIT_COMMIT: ${scmVars.GIT_COMMIT}"
     }
 }
